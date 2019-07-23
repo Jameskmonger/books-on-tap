@@ -31,6 +31,11 @@ export class BookBuilder {
         return this;
     }
 
+    public withStockAmount(stockAmount: number) {
+        this.stockAmount = stockAmount;
+        return this;
+    }
+
     public build(): Book {
         return {
             id: this.id,
