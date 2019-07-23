@@ -2,8 +2,7 @@ import "../../utils/setup-enzyme";
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import { TestFixture, Test, Expect, AsyncTest } from "alsatian";
-
+import { TestFixture, Test, Expect } from "alsatian";
 
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -12,6 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 
 import { BookListCard } from "./book-list-card";
 import { BookBuilder } from "../../models/book";
@@ -36,6 +36,10 @@ export class BookListCardTests {
                         <Typography gutterBottom variant="h5" component="h2">
                             {book.title}
                         </Typography>
+                        <Typography gutterBottom variant="h6" component="h4" align="right">
+                            {book.author.firstName} {book.author.lastName}
+                        </Typography>
+                        <Divider className="divider" />
                         <Typography>
                             {book.description}
                         </Typography>
@@ -43,7 +47,7 @@ export class BookListCardTests {
                     <CardActions>
                         <Button size="small" color="primary">
                             View
-                        </Button>
+                    </Button>
                     </CardActions>
                 </Card>
             </Grid>

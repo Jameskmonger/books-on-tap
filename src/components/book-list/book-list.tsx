@@ -19,7 +19,7 @@ const BookList: React.FunctionComponent<BookListProps> = ({ books }) => {
     }
 
     return (
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
             {
                 books.map(b => <BookListCard key={b.id} book={b} />)
             }

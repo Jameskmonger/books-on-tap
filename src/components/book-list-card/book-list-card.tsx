@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 import { Book } from "../../models/book";
 
 interface BookListCardProps {
@@ -25,6 +26,10 @@ const BookListCard: React.FunctionComponent<BookListCardProps> = ({ book }) => {
                     <Typography gutterBottom variant="h5" component="h2">
                         {book.title}
                     </Typography>
+                    <Typography gutterBottom variant="h6" component="h4" align="right">
+                        {book.author.firstName} {book.author.lastName}
+                    </Typography>
+                    <Divider className="divider"/>
                     <Typography>
                         {book.description}
                     </Typography>
