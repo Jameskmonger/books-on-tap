@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 
 import { getBooks } from "../data/books";
 import { BookListPage } from "../pages/book-list-page";
+import { Routes } from "./routes";
 
 const App: React.FunctionComponent = () => {
     return (
@@ -19,7 +20,7 @@ const App: React.FunctionComponent = () => {
             </Container>
 
             <Container maxWidth="md" className="content">
-                <BookListPage getBooks={getBooks} />
+                <Routes />
             </Container>
         </>
     );
