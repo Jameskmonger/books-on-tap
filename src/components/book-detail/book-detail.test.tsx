@@ -9,11 +9,17 @@ import Container from "@material-ui/core/Container";
 
 import { BookDetail } from "./book-detail";
 import { BookBuilder } from "../../models/book";
-import { BookListCard } from "../book-list-card/book-list-card";
 import { Loader } from "../loader/loader";
 
 @TestFixture("<BookDetail /> tests")
 export class BookDetailTests {
+    @Test()
+    public shouldRenderLoadingSpinnerWhenNotLoaded() {
+        const wrapper = shallow(<BookDetail book={null} />);
+
+        Expect(wrapper.equals(<Loader />)).toBe(true);
+    }
+
     @Test()
     public shouldRenderCorrectly() {
         const book = new BookBuilder().build();
