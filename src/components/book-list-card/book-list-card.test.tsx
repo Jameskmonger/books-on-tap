@@ -25,13 +25,14 @@ export class BookListCardTests {
         const wrapper = shallow(<BookListCard book={book} />);
 
         const expected = (
-            <Grid item xs={12} sm={6} md={4}>
-                <Card>
+            <Grid item xs={12} sm={6} md={4} className="book-list-card">
+                <Card className="card">
                     <CardMedia
+                        className="media"
                         image={book.thumbnail}
                         title={book.title}
                     />
-                    <CardContent>
+                    <CardContent className="content">
                         <Typography gutterBottom variant="h5" component="h2">
                             {book.title}
                         </Typography>
@@ -42,7 +43,7 @@ export class BookListCardTests {
                     <CardActions>
                         <Button size="small" color="primary">
                             View
-                    </Button>
+                        </Button>
                     </CardActions>
                 </Card>
             </Grid>

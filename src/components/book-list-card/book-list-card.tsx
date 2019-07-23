@@ -14,13 +14,14 @@ interface BookListCardProps {
 
 const BookListCard: React.FunctionComponent<BookListCardProps> = ({ book }) => {
     return (
-        <Grid item xs={12} sm={6} md={4}>
-            <Card>
+        <Grid item xs={12} sm={6} md={4} className="book-list-card">
+            <Card className="card">
                 <CardMedia
+                    className="media"
                     image={book.thumbnail}
                     title={book.title}
                 />
-                <CardContent>
+                <CardContent className="content">
                     <Typography gutterBottom variant="h5" component="h2">
                         {book.title}
                     </Typography>
