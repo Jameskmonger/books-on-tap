@@ -2,22 +2,10 @@ import * as React from "react";
 import { Book } from "../../models/book";
 
 interface BookListProps {
-    getBooks: () => Promise<Book[]>;
+    books: Book[];
 }
 
-const BookList: React.FunctionComponent<BookListProps> = ({ getBooks }) => {
-    const [ books, setBooks ] = React.useState<Book[]>(null);
-
-    React.useEffect(() => {
-        const get = async () => {
-            const books = await getBooks();
-
-            setBooks(books);
-        };
-
-        get();
-    }, [getBooks]);
-
+const BookList: React.FunctionComponent<BookListProps> = ({ books }) => {
     if (books === null) {
         return <p>Loading books...</p>;
     }
