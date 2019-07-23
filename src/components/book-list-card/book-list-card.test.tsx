@@ -15,6 +15,7 @@ import Divider from "@material-ui/core/Divider";
 
 import { BookListCard } from "./book-list-card";
 import { BookBuilder } from "../../models/book";
+import { Link } from "react-router-dom";
 
 @TestFixture("<BookListCard /> tests")
 export class BookListCardTests {
@@ -45,9 +46,11 @@ export class BookListCardTests {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary">
-                            View
-                    </Button>
+                        <Link to={`/book/${book.id}`}>
+                            <Button size="small" color="primary">
+                                View
+                            </Button>
+                        </Link>
                     </CardActions>
                 </Card>
             </Grid>
