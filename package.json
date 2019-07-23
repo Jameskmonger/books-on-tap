@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "ts-node ./src/utils/run-tests.ts"
   },
   "author": "James Monger",
   "license": "MIT",
@@ -16,8 +17,16 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "alsatian": "^2.4.0",
     "awesome-typescript-loader": "^5.2.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "html-webpack-plugin": "^3.2.0",
+    "jsdom": "15.1.1",
+    "jsdom-global": "3.0.2",
+    "ts-node": "^8.3.0",
     "typescript": "^3.5.3",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6",
