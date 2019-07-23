@@ -16,3 +16,4 @@ Fun project integrating with a bookstore API
   - move the styling out of `index.html`
 - Consider using a DI container for the `getBooks` / `getBook` data functions
 - Break the detail/card components down into smaller subcomponents for more clear responsbilities
+- Set up `webpack-dev-server` to route properly - at the moment if you refresh while on `localhost:9000/book/______`, you will get a 404 as there isn't a physical file at that location, it's just a SPA route
