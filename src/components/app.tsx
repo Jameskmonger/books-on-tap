@@ -1,9 +1,9 @@
 import * as React from "react";
-import { BookList } from "./book-list/book-list";
 import { getBooks } from "../data/books";
+import { BookListPage } from "../pages/book-list-page";
 
 const App: React.FunctionComponent = () => {
-    return <BookList getBooks={getBooks} />;
+    return <BookListPage getBooks={getBooks} />;
 };
 
 export { App };
