@@ -13,13 +13,19 @@ const App: React.FunctionComponent = () => {
                     Books on Tap
                 </Typography>
                 <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                    A lightweight React bookstore.
+                    A lightweight React bookstore
                 </Typography>
             </Container>
 
             <Container maxWidth="md" className="content">
                 <Routes />
             </Container>
+
+            <footer className="footer">
+                <Typography variant="h6" align="center" gutterBottom>
+                    Built with &#10084; by James Monger
+                </Typography>
+            </footer>
         </>
     );
 };
