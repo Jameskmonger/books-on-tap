@@ -21,6 +21,16 @@ export class BookBuilder {
     private thumbnail: string = "http://fake-thumnail.example";
     private isbn: string = "978-3-16-148410-0";
 
+    public withId(id: string) {
+        this.id = id;
+        return this;
+    }
+
+    public withTitle(title: string) {
+        this.title = title;
+        return this;
+    }
+
     public build(): Book {
         return {
             id: this.id,

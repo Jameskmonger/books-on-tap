@@ -2,9 +2,13 @@ import "../../utils/setup-enzyme";
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import { TestFixture, Test, Expect, AsyncTest } from "alsatian";
+import { TestFixture, Test, Expect } from "alsatian";
+
+import Grid from '@material-ui/core/Grid';
+
 import { BookList } from "./book-list";
 import { BookBuilder } from "../../models/book";
+import { BookListCard } from "../book-list-card/book-list-card";
 
 @TestFixture("<BookList /> tests")
 export class BookListTests {
@@ -15,11 +19,29 @@ export class BookListTests {
         Expect(wrapper.equals(<p>Loading books...</p>)).toBe(true);
     }
 
-    @AsyncTest()
-    public async shouldRenderBooks() {
-        const books = [ new BookBuilder().build() ];
+    @Test()
+    public shouldRenderBooks() {
+        const books = [
+            new BookBuilder()
+                .withId("00000000-0000-0000-0000-000000001234")
+                .withTitle("Game Engine Architecture")
+                .build(),
+
+            new BookBuilder()
+                .withId("00000000-0000-0000-0000-000000005678")
+                .withTitle("Complete Guide to the Modern Car")
+                .build()
+        ];
+
         const wrapper = shallow(<BookList books={books} />);
 
-        Expect(wrapper.equals(<p>{books[0].id}</p>)).toBe(true);
+        const expected = (
+            <Grid container spacing={2}>
+                <BookListCard key={books[0].id} book={books[0]} />
+                <BookListCard key={books[1].id} book={books[1]} />
+            </Grid>
+        )
+
+        Expect(wrapper.equals(expected)).toBe(true);
     }
 }
