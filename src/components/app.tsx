@@ -3,8 +3,6 @@ import * as React from "react";
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
-import { getBooks } from "../data/books";
-import { BookListPage } from "../pages/book-list-page";
 import { Routes } from "./routes";
 
 const App: React.FunctionComponent = () => {

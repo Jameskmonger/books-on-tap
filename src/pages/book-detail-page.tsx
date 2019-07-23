@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
+import Typography from "@material-ui/core/Typography";
 import { Book } from "../models/book";
 import { BookDetail } from "../components/book-detail/book-detail";
 
@@ -12,7 +14,7 @@ interface BookDetailPageProps {
 // passing data into the (tested) BookList component
 
 const BookDetailPage: React.FunctionComponent<BookDetailPageProps> = ({ id, getBook }) => {
-    const [ book, setBook ] = React.useState<Book>(null);
+    const [book, setBook] = React.useState<Book>(null);
 
     React.useEffect(() => {
         const get = async () => {
@@ -24,7 +26,15 @@ const BookDetailPage: React.FunctionComponent<BookDetailPageProps> = ({ id, getB
         get();
     }, [id, getBook]);
 
-    return <BookDetail book={book} />;
+    return (
+        <>
+            <Typography className="home-link">
+                <Link to="/">{"<-"} Return to book list</Link>
+            </Typography>
+
+            <BookDetail book={book} />
+        </>
+    );
 };
 
 export { BookDetailPage };
