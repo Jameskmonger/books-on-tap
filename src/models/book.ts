@@ -1,4 +1,4 @@
-import { Author } from "./author";
+import { Author, AuthorBuilder } from "./author";
 
 export interface Book {
     id: string;
@@ -14,7 +14,7 @@ export interface Book {
 export class BookBuilder {
     private id: string = "00000000-0000-0000-0000-000000000000";
     private title: string = "A Hitchhiker's Guide to the Galaxy";
-    private author: Author;
+    private author: Author = new AuthorBuilder().build();
     private price: number = 15;
     private description: string = "Lorem ipsum dolor sit amet";
     private stockAmount: number = 5;
