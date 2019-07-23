@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import { BookList } from "./book-list";
 import { BookBuilder } from "../../models/book";
 import { BookListCard } from "../book-list-card/book-list-card";
+import { Loader } from "../loader/loader";
 
 @TestFixture("<BookList /> tests")
 export class BookListTests {
@@ -16,7 +17,7 @@ export class BookListTests {
     public shouldRenderLoadingSpinnerWhenNotLoaded() {
         const wrapper = shallow(<BookList books={null} />);
 
-        Expect(wrapper.equals(<p>Loading books...</p>)).toBe(true);
+        Expect(wrapper.equals(<Loader />)).toBe(true);
     }
 
     @Test()

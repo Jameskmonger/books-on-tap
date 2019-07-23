@@ -2,6 +2,7 @@ import * as React from "react";
 import Grid from '@material-ui/core/Grid';
 import { Book } from "../../models/book";
 import { BookListCard } from "../book-list-card/book-list-card";
+import { Loader } from "../loader/loader";
 
 interface BookListProps {
     books: Book[];
@@ -9,7 +10,7 @@ interface BookListProps {
 
 const BookList: React.FunctionComponent<BookListProps> = ({ books }) => {
     if (books === null) {
-        return <p>Loading books...</p>;
+        return <Loader />;
     }
 
     return (
