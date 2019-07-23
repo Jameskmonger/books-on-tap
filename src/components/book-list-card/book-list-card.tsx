@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import { Book } from "../../models/book";
+import { Link } from "react-router-dom";
 
 interface BookListCardProps {
     book: Book;
@@ -29,15 +30,17 @@ const BookListCard: React.FunctionComponent<BookListCardProps> = ({ book }) => {
                     <Typography gutterBottom variant="h6" component="h4" align="right">
                         {book.author.firstName} {book.author.lastName}
                     </Typography>
-                    <Divider className="divider"/>
+                    <Divider className="divider" />
                     <Typography>
                         {book.description}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" color="primary">
-                        View
-                    </Button>
+                    <Link to={`/book/${book.id}`}>
+                        <Button size="small" color="primary">
+                            View
+                        </Button>
+                    </Link>
                 </CardActions>
             </Card>
         </Grid>

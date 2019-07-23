@@ -2,7 +2,7 @@ import * as React from "react";
 import { Book } from "../models/book";
 import { BookList } from "../components/book-list/book-list";
 
-interface BookListProps {
+interface BookListPageProps {
     getBooks: () => Promise<Book[]>;
 }
 
@@ -10,7 +10,7 @@ interface BookListProps {
 // so this is sadly not tested - but has been made into a super-thin layer
 // passing data into the (tested) BookList component
 
-const BookListPage: React.FunctionComponent<BookListProps> = ({ getBooks }) => {
+const BookListPage: React.FunctionComponent<BookListPageProps> = ({ getBooks }) => {
     const [ books, setBooks ] = React.useState<Book[]>(null);
 
     React.useEffect(() => {
